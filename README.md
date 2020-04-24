@@ -5,15 +5,17 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 运行项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 发布项目
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 参考原型
+```
+https://shop.vivo.com.cn/
+```
