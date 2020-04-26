@@ -29,12 +29,16 @@
 		<!-- 商品列表 -->
 		<div class="flex">
 			<div v-for="(img,index2) in item.homeFloorPosElementVOS" v-if="index2!=0&&index!=3" :style="{width:'50%',border:'1px solid #e9e9e9'}">
-				<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
-				<Good v-else :good="img"></Good>
+				<router-link to="/detail">
+					<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
+					<Good v-else :good="img"></Good>
+				</router-link>
 			</div>
 			<div v-for="(img,index2) in item.homeFloorPosElementVOS" v-if="index == 3" :style="{width:'50%',border:'1px solid #e9e9e9'}">
-				<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
-				<Good v-else :good="img"></Good>
+				<router-link to="/detail">
+					<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
+					<Good v-else :good="img"></Good>
+				</router-link>
 			</div>
 			<div v-if="item.homeFloorLinkMetaVOS.length>0" :style="{width:'100%',height:'40px',lineHeight:'40px',fontSize:'0.24rem',textAlign:'center',borderBottom:'1px solid #eee'}">
 				{{item.homeFloorLinkMetaVOS[0].name}} >

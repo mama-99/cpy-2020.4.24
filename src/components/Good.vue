@@ -1,9 +1,11 @@
 <template>
 	<div class="good">
-		<img :src="good.picSrc" alt="">
-		<h4 class="van-ellipsis">{{good.name}}</h4>
-		<p class="van-ellipsis">{{good.spec}}</p>
-		<p class="price">￥{{good.salePrice}}</p>
+		<router-link to="/detail">
+			<img :src="good.picSrc" alt="">
+			<h4 class="van-ellipsis">{{good.name}}</h4>
+			<p class="van-ellipsis">{{good.spec}}</p>
+			<p class="price">￥{{good.salePrice}}</p>
+		</router-link>
 	</div>
 </template>
 
@@ -26,10 +28,12 @@
 		}
 		h4{
 			font-size: 0.3rem;
+			color: #444;
 		}
 		p{
 			font-size: 0.2rem;
 			margin-top: 0.2rem;
+			color: #555;
 			&.price{
 				font-size: 0.3rem;
 				color: #f81200;
