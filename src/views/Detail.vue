@@ -150,7 +150,7 @@
 			  this.showShare = false;
 			},
 			onBuyClicked(){
-				alert("购买")
+				this.$router.push("/pay")
 			},
 			onAddCartClicked(good){
 				//console.log(good)

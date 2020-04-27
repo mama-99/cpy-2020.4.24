@@ -24,7 +24,7 @@
 	    <router-link to="/cart" :style="{fontSize:'0.24rem'}">
 			<van-icon name="cart-o" size="0.34rem"/> 购物车
 		</router-link>
-		<router-link to="" :style="{fontSize:'0.24rem'}">
+		<router-link to="/goodform" :style="{fontSize:'0.24rem'}">
 			<van-icon name="label-o" size="0.34rem"/> 我的订单
 		</router-link>
 		<router-link to="/mine" :style="{fontSize:'0.24rem'}">

@@ -1,6 +1,6 @@
 <template>
-	<div class="cart">
-		<van-nav-bar title="购物车">
+	<div class="goodform">
+		<van-nav-bar title="我的订单">
 		  <template #left>
 		    <van-icon name="arrow-left" size="18" @click="$router.go(-1)"/>
 		  </template>
@@ -8,16 +8,17 @@
 		    <van-icon name="ellipsis" size="18" />
 		  </template>
 		</van-nav-bar>
-		<div class="container" >
-			<div v-if="$store.getters.getGoods.length < 1">
+		
+		<div class="container">
+			<div v-if="$store.getters.getForm.length < 1">
 				<van-icon name="cart-o" size="2rem" />
-				<h2>您的购物车里还没有任何商品</h2>
+				<h2>您还没有订单</h2>
 				<br>
 				<van-button round type="info" plain to="/">去逛逛</van-button>
 			</div>
 			
 			
-			<van-card v-for="(item,index) in $store.getters.getGoods"
+			<van-card v-for="(item,index) in $store.getters.getForm"
 			  :num="item.num"
 			  :price="item.price"
 			  desc="描述信息"
@@ -29,16 +30,11 @@
 			    <van-tag plain type="danger">标签</van-tag>
 			  </template>
 			  <template #footer>
-				<van-button size="mini" style="font-size: 0.3rem;" @click="removeNum(item.id,item.num)">-</van-button>
-				<van-button size="mini" style="font-size: 0.3rem;" @click="addNum(item.id,item.num)">+</van-button>
-			    <van-button size="mini" type="warning" to="/detail">进入店铺</van-button>
-			    <van-button size="mini" type="danger" @click="remove(item.id)">移除</van-button>
+			    <van-button size="mini" type="warning" >查看物流</van-button>
+			    <van-button size="mini" type="danger" >确认收货</van-button>
 			  </template>
 			</van-card>
-			
 		</div>
-		
-		
 	</div>
 </template>
 
@@ -50,30 +46,13 @@
 	Vue.use(Dialog);
 	export default{
 		methods:{
-			remove(id){
-				Dialog.confirm({
-				  title: '提示',
-				  message: '确认要移除该商品？',
-				}).then(() => {
-				    this.$store.commit("removeGoods",id)
-				}).catch(() => {
-				    
-				});
-			},
-			addNum(id,num){
-				this.$store.commit("addGoodsNum",id)
-			},
-			removeNum(id,num){
-				if(num>1){
-					this.$store.commit("removeGoodsNum",id)
-				}	
-			}
+			
 		}
 	}
 </script>
 
 <style lang="less" scoped>
-	.cart{
+	.goodform{
 		.container{
 			position: absolute;
 			top: 0;

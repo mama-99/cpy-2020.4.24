@@ -5,14 +5,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-	  goods:[]
+	  goods:[],
+	  form:[],
   },
   getters:{
 	  getGoods(state){
 		  return state.goods
+	  },
+	  getForm(state){
+		  return state.form
 	  }
   },
   mutations: {
+	  addForm(state,form){
+		  state.form.push(form)
+	  },
 	  addGoods(state,good){
 	  		  let a = true;
 	  		  state.goods.forEach(item=>{

@@ -9,6 +9,8 @@ import SearchList from '../views/SearchList.vue'
 import Mine from '../views/Mine.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import GoodForm from '../views/GoodForm.vue'
+import Pay from '../views/Pay.vue'
 import R2 from '../components/R2.vue'
 import R1 from '../components/R1.vue'
 
@@ -32,9 +34,22 @@ Vue.use(VueRouter)
     component: Class
   },
   {
+    path: '/pay',
+    name: 'Pay',
+    component: Pay
+  },
+  {
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/goodform',
+    name: 'GoodForm',
+    component: GoodForm,
+  	meta:{
+  		auth:true
+  	}
   },
   {
     path: '/mine',

@@ -7,13 +7,13 @@
 			<router-link to="/login" v-if="!$jsCookie.get('username')" :style="{color:'#fff'}">登录/注册</router-link>
 			<router-link to="/login" v-else :style="{color:'#fff'}">{{$jsCookie.get('username')}}</router-link>
 		</div>
-		<van-cell title="我的订单" is-link value="全部订单"/>
+		<van-cell title="我的订单" @click="$router.push('/goodform')" is-link value="全部订单"/>
 		<div class="flex">
 			<div @click="$router.push('/cart')">
 				<van-icon name="bill-o" size="0.6rem"/>
 				<p>待付款</p>
 			</div>
-			<div>
+			<div @click="$router.push('/goodform')">
 				<van-icon name="logistics" size="0.6rem"/>
 				<p>待收货</p>
 			</div>
