@@ -1,6 +1,6 @@
 <template>
 	<div class="good">
-		<router-link to="/detail">
+		<router-link :to="'/detail/'+(good.index || good.id)">
 			<img :src="good.picSrc" alt="">
 			<h4 class="van-ellipsis">{{good.name}}</h4>
 			<p class="van-ellipsis">{{good.spec}}</p>

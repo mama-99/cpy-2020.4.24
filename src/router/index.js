@@ -36,7 +36,10 @@ Vue.use(VueRouter)
   {
     path: '/pay',
     name: 'Pay',
-    component: Pay
+    component: Pay,
+	meta:{
+		auth:true
+	}
   },
   {
     path: '/login',
@@ -70,9 +73,9 @@ Vue.use(VueRouter)
     component: SearchList
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'Detail',
-    component: Detail
+    component: Detail,
   },
   {
     path: '/register',

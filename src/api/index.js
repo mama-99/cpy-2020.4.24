@@ -7,15 +7,24 @@ let getClassAPI = (data)=>{
 }
 
 let getDetailAPI = (data)=>{
-	return axios.post("http://vivo.com/detail",data)
+	return axios.post("http://vivo.com/detail",{
+		params:{
+			id:data.id
+		}
+	})
 }
 
 let loginAPI = (data)=>{
 	return axios.post("http://vivo.com/login",data)
 }
 
+let registerAPI = (data)=>{
+	return axios.post("http://vivo.com/register",data)
+}
+
 export{
 	getClassAPI,
 	getDetailAPI,
-	loginAPI
+	loginAPI,
+	registerAPI
 }

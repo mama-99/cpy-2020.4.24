@@ -45,4 +45,12 @@ mock.mock("http://vivo.com/login",function(){
 	return result
 })
 
+mock.mock("http://vivo.com/register",function(){
+	let result ={
+		"code":0,
+		"result":"ok"
+	}
+	return result
+})
+
 export {mock}

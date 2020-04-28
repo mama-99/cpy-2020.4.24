@@ -62,7 +62,10 @@
 <script>
 	import Vue from 'vue';
 	import { Notify } from 'vant';
+	import { Dialog } from 'vant';
 	
+	// 全局注册
+	Vue.use(Dialog);
 	Vue.use(Notify);
 	export default{
 		data(){
@@ -154,14 +157,26 @@
 			},
 			onAddCartClicked(good){
 				//console.log(good)
-				this.$store.commit("addGoods",{
-					id:this.good.id,
-					name:this.good.type,
-					img:this.good.picSrc,
-					price:this.good.price,
-					num:good.selectedNum
-				})
-				Notify({type:'success',message:'添加购物车成功'});
+				if(this.$jsCookie.get("username")){
+					this.$store.commit("addGoods",{
+						id:this.good.id,
+						name:this.good.type,
+						img:this.good.picSrc,
+						price:this.good.price,
+						num:good.selectedNum
+					})
+					Notify({type:'success',message:'添加购物车成功'});
+				}else{
+					Dialog.confirm({
+					  title: '提示',
+					  message: '您还没有登录！是否前往登录界面。',
+					}).then(() => {
+					    this.$router.push('/login')
+					}).catch(() => {
+					    
+					});
+				}
+				
 			},
 			onSkuSelect(good){
 				//console.log(good)

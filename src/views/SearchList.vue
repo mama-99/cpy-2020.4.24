@@ -14,7 +14,7 @@
 			</van-dropdown-menu>
 		</van-sticky>
 		<br>
-		<div v-for="item in datas" :style="{display:'flex',padding:'0 0.2rem'}" @click="$router.push('/detail')">
+		<div v-for="item in datas" :style="{display:'flex',padding:'0 0.2rem'}" @click="$router.push('/detail/'+item.id)">
 			<div :style="{width:'50%'}">
 				<img :src="item.picSrc" alt="" :style="{width:'94%'}">
 			</div>

@@ -52,7 +52,7 @@
 			  if(this.value.length == 6){
 				  Dialog.confirm({
 				    title: '提示',
-				    message: '确认付款？',
+				    message: '付款成功！前往我的订单查看',
 				  }).then(() => {
 				      this.$store.commit("addForm",{
 						  img:this.data.img_url,
@@ -61,7 +61,7 @@
 					  })
 					  this.$router.push('/goodform')
 				  }).catch(() => {
-				      this.$router.push('/detail')
+				      this.$router.go(-1)
 				  });
 			  }
 		    },

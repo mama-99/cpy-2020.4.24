@@ -17,6 +17,8 @@
 		</van-cell-group>
 		<br>
 		<van-button type="info" round @click="success" block>完成</van-button>
+		<br>
+		<van-button type="info" plain round block to="/register/r1">上一步</van-button>
 	</div>
 </template>
 
@@ -36,7 +38,17 @@
 		},
 		methods:{
 			con(){
-				Toast('验证码已发送');
+				this.$api.registerAPI({
+					
+				}).then(res=>{
+					if(res.data.code==0){
+						Toast('验证码已发送');
+					}
+					
+				}).catch(err=>{
+					console.log('登录失败',err)
+				})
+				
 			},
 			success(){
 				Dialog.confirm({

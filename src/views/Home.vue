@@ -29,13 +29,13 @@
 		<!-- 商品列表 -->
 		<div class="flex">
 			<div v-for="(img,index2) in item.homeFloorPosElementVOS" v-if="index2!=0&&index!=3" :style="{width:'50%',border:'1px solid #e9e9e9'}">
-				<router-link to="/detail">
+				<router-link :to="'/detail/'+item.id">
 					<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
 					<Good v-else :good="img"></Good>
 				</router-link>
 			</div>
 			<div v-for="(img,index2) in item.homeFloorPosElementVOS" v-if="index == 3" :style="{width:'50%',border:'1px solid #e9e9e9'}">
-				<router-link to="/detail">
+				<router-link :to="'/detail/'+item.id">
 					<img :src="img.picSrc" alt="" :style="{width:'98%'}" v-if="index == 1">
 					<Good v-else :good="img"></Good>
 				</router-link>

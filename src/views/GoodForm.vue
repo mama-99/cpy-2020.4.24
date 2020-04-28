@@ -2,7 +2,7 @@
 	<div class="goodform">
 		<van-nav-bar title="我的订单">
 		  <template #left>
-		    <van-icon name="arrow-left" size="18" @click="$router.go(-1)"/>
+		    <van-icon name="arrow-left" size="18" @click="$router.push('/mine')"/>
 		  </template>
 		  <template #right>
 		    <van-icon name="ellipsis" size="18" />
@@ -11,7 +11,7 @@
 		
 		<div class="container">
 			<div v-if="$store.getters.getForm.length < 1">
-				<van-icon name="cart-o" size="2rem" />
+				<van-icon name="coupon-o" size="2rem" />
 				<h2>您还没有订单</h2>
 				<br>
 				<van-button round type="info" plain to="/">去逛逛</van-button>

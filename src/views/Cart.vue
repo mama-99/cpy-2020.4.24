@@ -31,7 +31,7 @@
 			  <template #footer>
 				<van-button size="mini" style="font-size: 0.3rem;" @click="removeNum(item.id,item.num)">-</van-button>
 				<van-button size="mini" style="font-size: 0.3rem;" @click="addNum(item.id,item.num)">+</van-button>
-			    <van-button size="mini" type="warning" to="/detail">进入店铺</van-button>
+			    <van-button size="mini" type="warning" :to="'/detail/'+item.id">进入店铺</van-button>
 			    <van-button size="mini" type="danger" @click="remove(item.id)">移除</van-button>
 			  </template>
 			</van-card>
