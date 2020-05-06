@@ -2,7 +2,7 @@
 	<div class="goodform">
 		<van-nav-bar title="我的订单">
 		  <template #left>
-		    <van-icon name="arrow-left" size="18" @click="$router.push('/mine')"/>
+		    <van-icon name="arrow-left" size="18" @click="$router.push('/')"/>
 		  </template>
 		  <template #right>
 		    <van-icon name="ellipsis" size="18" />
